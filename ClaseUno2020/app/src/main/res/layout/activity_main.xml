@@ -4,24 +4,42 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Hello World!"
-        android:id="@+id/txtSaludo"/>
+        android:id="@+id/txtSaludo"
+        android:gravity="center"/>
 
     <EditText
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
+        android:layout_gravity="center"
+        android:gravity="right"
         android:layout_height="wrap_content"
         android:id="@+id/inputTxt"/>
 
+
+
     <Button
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Apretame"
         android:id="@+id/btn"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Otro boton"
+        android:id="@+id/btn2"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/nerv"
+        android:scaleType="centerCrop"/>
+
 
 
 </LinearLayout>

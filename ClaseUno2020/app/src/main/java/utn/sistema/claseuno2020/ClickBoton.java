@@ -16,18 +16,30 @@ public class ClickBoton implements View.OnClickListener
 
     ClickBoton(Activity activity)
     {
+        this.activity = activity;
     }
 
     @Override
     public void onClick(View view)
     {
         Log.d("click","Se hizo un click");
-        if(txtView == null || editView == null)
+        if(txtView == null)
         {
             this.txtView = this.activity.findViewById(R.id.txtSaludo);
-            this.editView = this.activity.findViewById(R.id.inputTxt);
         }
-        this.txtView.setText(editView.getText().toString());
+
+        if(view.getId() == R.id.btn)
+        {
+            if(editView == null)
+            {
+                this.editView = this.activity.findViewById(R.id.inputTxt);
+            }
+            this.txtView.setText(editView.getText().toString());
+        }
+        else if(view.getId() == R.id.btn2)
+        {
+            this.txtView.setText("OTRO TEXTO");
+        }
     }
 
     public Activity getActivity() {

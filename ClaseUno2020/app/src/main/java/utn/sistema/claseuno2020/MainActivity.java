@@ -26,6 +26,9 @@ public class MainActivity extends AppCompatActivity {
         Button boton = super.findViewById(R.id.btn);
         View.OnClickListener onClickListener = new ClickBoton(this);
         boton.setOnClickListener(onClickListener);
+
+        Button boton2 = super.findViewById(R.id.btn2);
+        boton2.setOnClickListener(onClickListener);
     }
 
 }
