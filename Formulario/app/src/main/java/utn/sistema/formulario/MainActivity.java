@@ -3,9 +3,17 @@ package utn.sistema.formulario;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+
+import java.util.logging.Logger;
+
+import utn.sistema.formulario.clases.Persona;
+import utn.sistema.formulario.listeners.ClickBoton;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -14,11 +22,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText inputNombre = super.findViewById(R.id.editNombre);
-        EditText inputApellido = super.findViewById(R.id.editApellido);
-        EditText inputDni = super.findViewById(R.id.editDni);
-        RadioGroup radioSexo = super.findViewById(R.id.radioSexo);
 
+    }
 
+    public void addListenerOnButton()
+    {
+        Button btnDisplay = (Button) findViewById(R.id.btnGuardar);
+        View.OnClickListener onClickListener = new ClickBoton(this);
+
+        btnDisplay.setOnClickListener(onClickListener);
     }
 }
