@@ -22,12 +22,17 @@ public class ClickBoton implements View.OnClickListener
     @Override
     public void onClick(View view)
     {
+        // Nombre
         EditText inputNombre = this.activity.findViewById(R.id.editNombre);
+        // Apellido
         EditText inputApellido = this.activity.findViewById(R.id.editApellido);
+        // DNI
         EditText inputDni = this.activity.findViewById(R.id.editDni);
+        // Sexo
         RadioGroup radioSexo = this.activity.findViewById(R.id.radioSexo);
         int selectedRadio = radioSexo.getCheckedRadioButtonId();
         RadioButton radioButton = this.activity.findViewById(selectedRadio);
+
         Persona persona = new Persona(inputNombre.getText().toString(),
                                         inputApellido.getText().toString(),
                                         inputDni.getText().toString(),
