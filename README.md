@@ -1,2 +1,2 @@
-# ejercicios_laboratorio_5
-Android
+# Ejercicios de Laboratorio en Computación 5
+Desarrollo Mobile en Android
