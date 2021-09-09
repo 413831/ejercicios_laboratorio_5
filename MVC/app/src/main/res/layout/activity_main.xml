@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="@string/ingrese_nombre"
+        android:id="@+id/txtNombre"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:id="@+id/edNombre"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:text="Escriba su nombre:"
+        android:id="@+id/txtApellido"/>
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Apellido"
+        android:id="@+id/edApellido"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Sexo"/>
+        
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/radioSexo">
+
+
+            <RadioButton
+                android:id="@+id/radioHombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hombre" />
+
+            <RadioButton
+                android:id="@+id/radioMujer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mujer" />
+
+        </RadioGroup>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/texto_boton"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            android:drawableLeft="@drawable/ic_launcher_background"
+            android:id="@+id/btnGuardar"/>
+    </FrameLayout>
+
+</LinearLayout>
