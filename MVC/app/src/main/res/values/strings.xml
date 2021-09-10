@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">MVC</string>
-    <string name="ingrese_nombre">Ingrese su nombre</string>
-    <string name="texto_boton">Guardar</string>
+    <string name="name">Ingrese su nombre: </string>
+    <string name="surname">Ingrese su apellido: </string>
+    <string name="id">DNI: </string>
+    <string name="gender">Sexo: </string>
+    <string name="male">Masculino</string>
+    <string name="female">Femenino</string>
+    <string name="btnText">Guardar</string>
+    <string name="error">Datos incompletos</string>
 
 </resources>

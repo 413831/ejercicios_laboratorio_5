@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MVC</string>
+    <string name="name">Please add your name</string>
+    <string name="surname">Please add your surname</string>
+    <string name="id">ID: </string>
+    <string name="gender">Gender: </string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="btnText">Save</string>
+    <string name="error">Please, fill the fields</string>
+
+</resources>
