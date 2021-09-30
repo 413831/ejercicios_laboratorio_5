@@ -17,6 +17,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         List<Persona> personas = new ArrayList<>();
 
+        MiConsulta consulta = new MiConsulta();
+        consulta.start();
+
         personas.add(new Persona("nombre1", "apellido1"));
         personas.add(new Persona("nombre2", "apellido2"));
         personas.add(new Persona("nombre3", "apellido3"));
