@@ -1,44 +1,92 @@
 package utn.sistema.recyclerview;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.os.Bundle;
+import android.graphics.BitmapFactory;
+import android.os.*;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements Handler.Callback {
+
+    public static final int PERSONAS = 1;
+    public static final int IMAGEN = 2;
+    List<Persona> personas;
+    PersonaAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        List<Persona> personas = new ArrayList<>();
+        this.personas = new ArrayList<>();
+        this.adapter = new PersonaAdapter(this.personas);
 
-        MiConsulta consulta = new MiConsulta();
+        Handler handler = new Handler(this);
+        MiConsulta consulta = new MiConsulta(handler, true);
         consulta.start();
+        MiConsulta consultaImagen = new MiConsulta(handler,false);
+        consultaImagen.start();
 
         personas.add(new Persona("nombre1", "apellido1"));
         personas.add(new Persona("nombre2", "apellido2"));
         personas.add(new Persona("nombre3", "apellido3"));
-        personas.add(new Persona("nombre4", "apellido4"));
-        personas.add(new Persona("nombre5", "apellido5"));
-        personas.add(new Persona("nombre6", "apellido6"));
-        personas.add(new Persona("nombre7", "apellido7"));
-        personas.add(new Persona("nombre8", "apellido8"));
-        personas.add(new Persona("nombre9", "apellido9"));
-        personas.add(new Persona("nombre10", "apellido10"));
-
-        PersonaAdapter adapter = new PersonaAdapter(personas);
 
         RecyclerView recyclerView = super.findViewById(R.id.recyclerview);
-
         recyclerView.setAdapter(adapter);
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this,
                                                                             LinearLayoutManager.VERTICAL,
                                                                             false);
         recyclerView.setLayoutManager(linearLayoutManager);
+    }
+
+    @Override
+    public boolean handleMessage(@NonNull Message msg)
+    {
+        if(msg.arg1 == PERSONAS)
+        {
+            // Una accion
+            TextView textView = findViewById(R.id.txt);
+
+            try
+            {
+                JSONArray lista = new JSONArray(msg.obj.toString());
+
+                for (int i = 0; i < lista.length(); i++)
+                {
+                    JSONObject personaJSON = lista.getJSONObject(i);
+                    String nombre = personaJSON.getString("nombre");
+                    String apellido = personaJSON.getString("apellido");
+                    Persona persona = new Persona(nombre, apellido);
+                    /** TODO
+                     * Recuperar imagen de forma asíncrona
+                     */
+                    personas.add(persona);
+                }
+                adapter.notifyDataSetChanged();
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            textView.setText(msg.obj.toString());
+
+        }
+        else if(msg.arg1 == IMAGEN)
+        {
+            ImageView imageView = findViewById(R.id.imageView);
+
+            byte[] imagen = (byte[]) msg.obj;
+            imageView.setImageBitmap(BitmapFactory.decodeByteArray(imagen,0,imagen.length));
+        }
+        return false;
     }
 }
