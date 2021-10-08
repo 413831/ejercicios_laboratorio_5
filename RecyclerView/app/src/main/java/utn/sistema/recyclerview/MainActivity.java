@@ -1,12 +1,17 @@
 package utn.sistema.recyclerview;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.*;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,6 +35,13 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback 
         setContentView(R.layout.activity_main);
         this.personas = new ArrayList<>();
         this.adapter = new PersonaAdapter(this.personas);
+
+        ActionBar actionBar = getSupportActionBar();
+
+        TextView textView = findViewById(R.id.sa);
+
+        actionBar.setTitle("Segunda activity");
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         Handler handler = new Handler(this);
         MiConsulta consulta = new MiConsulta(handler, true);
@@ -88,5 +100,36 @@ public class MainActivity extends AppCompatActivity implements Handler.Callback 
             imageView.setImageBitmap(BitmapFactory.decodeByteArray(imagen,0,imagen.length));
         }
         return false;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.menu_principal, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case R.id.opcion1:
+                Log.d("Opcion 1", "Se hizo click en opcion 1");
+                break;
+            case R.id.opcion2:
+                Log.d("Opcion 2", "Se hizo click en opcion 2");
+                Intent intent = new Intent(this, CargarPersona.class);
+
+                intent.putExtra("numero", 123);
+                startActivity(intent);
+
+                break;
+            case R.id.opcion3:
+                Log.d("Opcion 3", "Se hizo click en opcion 3");
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 }

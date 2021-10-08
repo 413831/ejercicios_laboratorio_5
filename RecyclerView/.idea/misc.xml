@@ -3,8 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/layout/activity_cargar_persona.xml" value="0.18885869565217392" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.17300724637681159" />
         <entry key="app/src/main/res/layout/persona.xml" value="0.25" />
+        <entry key="app/src/main/res/menu/menu_principal.xml" value="0.19270833333333334" />
       </map>
     </option>
   </component>

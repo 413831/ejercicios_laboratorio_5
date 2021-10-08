@@ -12,6 +12,7 @@
         android:id="@+id/txt"
         tools:ignore="MissingConstraints"></TextView>
 
+
     <ImageView
         android:layout_width="150dp"
         android:layout_height="150dp"
