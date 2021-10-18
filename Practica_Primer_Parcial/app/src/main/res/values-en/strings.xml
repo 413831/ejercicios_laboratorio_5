@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Practica_Primer_Parcial</string>
+    <string name="user">User</string>
+    <string name="password">Password</string>
+    <string name="repeatPass">Re-enter password</string>
+    <string name="radioTitle">Type</string>
+    <string name="radioOpt1">User</string>
+    <string name="radioOpt2">Admin</string>
+    <string name="txtButton">Save</string>
+</resources>

@@ -2,7 +2,7 @@ package utn.sistema.practica_primer_parcial.clases;
 
 public enum TipoUsuario
 {
-    USUARIO("Usuario"),
+    USUARIO("User"),
     ADMINISTRADOR("Admin");
 
     private final String perfil;
@@ -17,4 +17,10 @@ public enum TipoUsuario
     {
         return this.perfil;
     }
+
+    public String getPerfil() {
+        return perfil;
+    }
+
+
 }

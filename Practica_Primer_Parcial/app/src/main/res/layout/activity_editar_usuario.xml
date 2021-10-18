@@ -5,13 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity"
+    tools:context=".EditarUsuario"
     android:padding="10dp">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Usuario"></TextView>
+        android:text="@string/user"></TextView>
 
     <EditText
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Contraseña"></TextView>
+        android:text="@string/password"></TextView>
 
     <EditText
         android:layout_width="wrap_content"
@@ -32,7 +32,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Repita la contraseña"></TextView>
+        android:text="@string/repeatPass"></TextView>
 
     <EditText
         android:layout_width="wrap_content"
@@ -49,7 +49,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Tipo"
+            android:text="@string/radioTitle"
             android:textAppearance="@style/TextAppearance.AppCompat.Medium"/>
 
 
@@ -62,13 +62,14 @@
                 android:id="@+id/radioUsuario"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Usuario" />
+                android:text="@string/radioOpt1"/>
 
             <RadioButton
                 android:id="@+id/radioAdmin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Administrador" />
+                android:text="@string/radioOpt2"
+                />
 
         </RadioGroup>
 
@@ -78,7 +79,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="Guardar"
+        android:text="@string/txtButton"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         android:textAllCaps="true"
         android:drawableLeft="@drawable/ic_launcher_foreground"

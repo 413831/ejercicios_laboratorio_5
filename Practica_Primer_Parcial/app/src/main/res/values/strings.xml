@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Practica_Primer_Parcial</string>
+    <string name="user">Usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="repeatPass">Repita la contraseña</string>
+    <string name="radioTitle">Tipo</string>
+    <string name="radioOpt1">Usuario</string>
+    <string name="radioOpt2">Administrador</string>
+    <string name="txtButton">Guardar</string>
 </resources>
