@@ -31,8 +31,11 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
 
         String nombre = preferences.getString("nombre", "sin nombre");
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setTitle(nombre);
+        if(!nombre.equals("sin nombre"))
+        {
+            ActionBar actionBar = getSupportActionBar();
+            actionBar.setTitle(nombre);
+        }
     }
 
     @Override
