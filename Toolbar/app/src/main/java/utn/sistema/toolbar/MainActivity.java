@@ -61,6 +61,11 @@ public class MainActivity extends AppCompatActivity implements SearchView.OnQuer
                 ActivityCompat.requestPermissions(this, new String[] {Manifest.permission.CALL_PHONE},0);
             }
         }
+        else if(item.getItemId() == R.id.itPopup)
+        {
+            PopUpGenerico popUpGenerico = new PopUpGenerico();
+            popUpGenerico.show(getSupportFragmentManager(), "tag");
+        }
         return super.onOptionsItemSelected(item);
     }
 
